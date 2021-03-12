@@ -1,0 +1,9 @@
+{% if aniresults %}
+<ul>
+    {% for anime in aniresults %}
+    <li>{{ anime.title }}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No anime available.</p>
+{% endif %}
