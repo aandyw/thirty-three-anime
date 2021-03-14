@@ -6,10 +6,15 @@ from django.http import JsonResponse
 from .services import get_search
 
 
-def anime_view(request):
-    # context = {
-    #     'aniresults': get_search,
-    # }
+def index(request):
+    ctx = {
+        "aniresults": []
+    }
+
+    return render(request, 'recsys/search.html', context=ctx)
+
+
+def animes(request):
     title_param = request.GET.get('q')
 
     anime_results = []
@@ -20,12 +25,9 @@ def anime_view(request):
         "aniresults": anime_results
     }
 
-    if request.is_ajax():
-        html = render_to_string(
-            template_name='recsys/results.html',
-            context=ctx
-        )
-        data = {"html_view": html}
-        return JsonResponse(data, safe=False)
-
-    return render(request, 'recsys/search.html', context=ctx)
+    html = render_to_string(
+        template_name='recsys/results.html',
+        context=ctx
+    )
+    data = {"html_view": html}
+    return JsonResponse(data, safe=False)

@@ -1,9 +1,15 @@
 {% if aniresults %}
-<ul>
-    {% for anime in aniresults %}
-    <li>{{ anime.title }}</li>
-    {% endfor %}
-</ul>
+
+{% for anime in aniresults %}
+<div class="card col col-3 mx-auto">
+    <a href="{{anime.url}}">
+        <img src="{{anime.image_url}}"
+            alt="anime">
+        <p>{{ anime.title }}</p>
+    </a>
+</div>
+{% endfor %}
+
 {% else %}
 <p>No anime available.</p>
 {% endif %}
