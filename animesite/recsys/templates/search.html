@@ -1,4 +1,4 @@
-{% extends "recsys/index.html" %}
+{% extends "index.html" %}
 
 {% block content %}
 <div class="row">
@@ -19,14 +19,12 @@
 			</div>
 		</div>
 
-		<div class="row justify-content-md-center"
-			id="cards">
-			{% include 'recsys/results.html' %}
+		<div class="cards-wrapper container">
+			<div class="row justify-content-md-left"
+				id="cards">
+				{% include 'results.html' %}
+			</div>
 		</div>
-
-
 	</div>
-
-
 </div>
 {% endblock %}

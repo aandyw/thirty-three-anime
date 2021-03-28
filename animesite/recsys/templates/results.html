@@ -1,13 +1,17 @@
 {% if aniresults %}
 
 {% for anime in aniresults %}
-<div class="card col col-3 mx-auto">
+
+<div class="card">
     <a href="{{anime.url}}">
         <img src="{{anime.image_url}}"
             alt="anime">
-        <p>{{ anime.title }}</p>
+    </a>
+    <a href="{{anime.url}}" class="card-title">
+        {{ anime.title }}
     </a>
 </div>
+
 {% endfor %}
 
 {% else %}

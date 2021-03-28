@@ -21,6 +21,24 @@ header h1 strong {
   color: #313131;
 }
 
+/* 3x3 MATRIX */
+
+.matrix {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  border: 1px solid black;
+  width: 32%;
+  padding-bottom: 32%; /* Same as width, sets height */
+  margin-bottom: 2%; /* (100-32*3)/2 */
+  position: relative;
+}
+
+/* RESULTS FORM */
+
 .form-inline {
   display: flex;
   justify-content: center;
@@ -52,22 +70,28 @@ header h1 strong {
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.15);
 }
 
-
 a,
 a:active,
 a:visited,
-a:hover  {
+a:hover {
   text-decoration: none;
 }
 
-
 /* MEDIA CARDS */
+.cards-wrapper {
+  width: 1000px;
+  padding: 0 auto;
+}
+
 #cards {
   padding-top: 50px;
+  text-align: center;
 }
 
 .card {
+  width: 200px;
   border: none;
+  margin: 16px;
 }
 
 .card img {
@@ -79,12 +103,12 @@ a:hover  {
   transition: 0.4s;
 }
 
-.card p {
-  padding: 16px;
+.card .card-title {
+  margin-top: 10px;
   color: #313131;
-  text-align: left;
+  overflow-wrap: normal;
 }
 
-.card img:hover{
+.card img:hover {
   transform: scale(1.05);
 }

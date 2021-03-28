@@ -8,10 +8,9 @@ from .services import get_search
 
 def index(request):
     ctx = {
-        "aniresults": []
+        "aniresults": get_search('naruto')
     }
-
-    return render(request, 'recsys/search.html', context=ctx)
+    return render(request, 'search.html', context=ctx)
 
 
 def animes(request):
@@ -26,8 +25,12 @@ def animes(request):
     }
 
     html = render_to_string(
-        template_name='recsys/results.html',
+        template_name='results.html',
         context=ctx
     )
     data = {"html_view": html}
     return JsonResponse(data, safe=False)
+
+
+def fav(request):
+    request.session['fav'] = 'test'
