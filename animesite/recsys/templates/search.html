@@ -1,30 +1,33 @@
 {% extends "index.html" %}
 
 {% block content %}
-<div class="row">
-	<div class="container">
-		<div class="row justify-content-md-center">
-			<div class="col">
-				<form class="form-inline">
-					<i id="search-icon"
-						class="fas fa-search"
-						aria-hidden="true"></i>
-					<input id="user-input"
-						class="form-control form-control-sm ml-3 w-75"
-						type="text"
-						placeholder="Search"
-						aria-label="Search"
-						required>
-				</form>
-			</div>
-		</div>
 
-		<div class="cards-wrapper container">
-			<div class="row justify-content-md-left"
-				id="cards">
-				{% include 'results.html' %}
-			</div>
-		</div>
+<div class="col">
+	<form class="form-inline">
+		<i id="search-icon"
+			class="fas fa-search"
+			aria-hidden="true"></i>
+		<input id="user-input"
+			class="form-control form-control-sm ml-3 w-75"
+			type="text"
+			placeholder="Search"
+			aria-label="Search"
+			required>
+	</form>
+</div>
+
+<div class="container">
+	<div id="cards">
+		{% include 'results.html' %}
 	</div>
 </div>
+
+<!-- <div class="cards-wrapper container">
+	<div class="row justify-content-md-left"
+		id="cards">
+		{% include 'results.html' %}
+	</div>
+</div> -->
+
+
 {% endblock %}

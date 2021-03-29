@@ -1,0 +1,15 @@
+/* 3x3 MATRIX */
+/* .matrix {
+  display: flex;
+}
+
+.item {
+  border: 1px dotted black;
+  flex-grow: 1;
+  width: 12vh;
+  height: 265px;
+}
+
+.item + .item {
+  margin-left: 2%;
+} */
