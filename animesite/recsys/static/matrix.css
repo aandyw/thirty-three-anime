@@ -1,15 +1,23 @@
 /* 3x3 MATRIX */
-/* .matrix {
+.matrix-wrapper {
+  width: 700px;
+  height: 700px;
+  border: 1px dotted black;
+  border-radius: 20px;
+}
+
+.matrix {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2%;
 }
 
 .item {
-  border: 1px dotted black;
-  flex-grow: 1;
-  width: 12vh;
-  height: 265px;
+  border: 1px dotted gray;
+  width: 32%;
+  padding-bottom: 32%; /* Same as width, sets height */
+  margin-bottom: 2%; /* (100-32*3)/2 */
+  position: relative;
+  border-radius: 4px;
 }
-
-.item + .item {
-  margin-left: 2%;
-} */

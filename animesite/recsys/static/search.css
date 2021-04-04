@@ -39,11 +39,6 @@ a:hover {
 }
 
 /* MEDIA CARDS */
-/* .cards-wrapper {
-  width: 1000px;
-  padding: 0 auto;
-} */
-
 #cards {
   display: flex;
   flex-wrap: wrap;
@@ -56,18 +51,8 @@ a:hover {
   height: 16.563rem;
   align-items: center;
   margin-bottom: 6%;
-}
-
-/* #cards {
-  padding-top: 50px;
-  text-align: center;
-} */
-
-/* .card {
-  width: 200px;
   border: none;
-  margin: 16px;
-} */
+}
 
 .card img {
   width: 11.563rem;
@@ -89,4 +74,10 @@ a:hover {
 
 .card img:hover {
   transform: scale(1.05);
+}
+
+/* MODAL */
+.modal-content {
+  width: 62.5rem;
+  height: 62.5rem;
 }

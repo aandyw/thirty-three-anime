@@ -8,7 +8,7 @@ from .services import get_search
 
 def index(request):
     ctx = {
-        "aniresults": get_search('naruto')
+        "aniresults": get_search("")
     }
     return render(request, 'search.html', context=ctx)
 
