@@ -1,9 +1,9 @@
 /* 3x3 MATRIX */
 .matrix-wrapper {
   width: 700px;
-  height: 700px;
-  border: 1px dotted black;
-  border-radius: 20px;
+  /* height: 700px; */
+  /* border: 1px dotted black; */
+  /* border-radius: 20px; */
 }
 
 .matrix {
@@ -15,9 +15,11 @@
 
 .item {
   border: 1px dotted gray;
-  width: 32%;
-  padding-bottom: 32%; /* Same as width, sets height */
+  width: 215px;
+  height: 215px;
+  padding-bottom: 215px; /* Same as width, sets height */
   margin-bottom: 2%; /* (100-32*3)/2 */
   position: relative;
   border-radius: 4px;
+  overflow: hidden;
 }

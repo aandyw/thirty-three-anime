@@ -1,10 +1,12 @@
-const ENDPOINT = 'http://127.0.0.1:8000/fav';
+const SELECT_ENDPOINT = 'http://127.0.0.1:8000/select';
+const MATRIX_VIEW = document.querySelector(".matrix");
 
-let fav_select = (endpoint, req_params) => {
+let select_anime = (title, image_url) => {
 
     var request = new XMLHttpRequest();
-    let url = new URL(endpoint);
-    url.searchParams.set('q', req_params);
+    let url = new URL(SELECT_ENDPOINT);
+    url.searchParams.set('title', title);
+    url.searchParams.set('image_url', image_url);
 
     request.open('GET', url, true);
 
@@ -12,10 +14,8 @@ let fav_select = (endpoint, req_params) => {
         if (this.status >= 200 && this.status < 400) {
             // Success!
             var data = JSON.parse(this.response);
-            fadeOut(ANIME_DIV).then(() => {
-                ANIME_DIV.innerHTML = data['html_view'];
-                fadeIn(ANIME_DIV);
-            });
+            console.log(data);
+            MATRIX_VIEW.innerHTML = data['html_view'];
 
         } else {
             // We reached our target server, but it returned an error
@@ -27,5 +27,6 @@ let fav_select = (endpoint, req_params) => {
         // There was a connection error of some sort
     };
 
+    console.log("SENDING SELECTION REQUEST");
     request.send();
 };

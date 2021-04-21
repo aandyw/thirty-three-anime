@@ -1,0 +1,30 @@
+{% if favourites %}
+
+{% for anime in favourites %}
+
+{% if anime %}
+<div class="item">
+    <img src="{{anime.image_url}}"
+        alt="">
+</div>
+{% else %}
+<div class="item">
+    <img src="."
+        alt="">
+</div>
+{% endif %}
+
+{% endfor %}
+
+{% else %}
+
+{% for i in '012345678'|make_list %}
+
+<div class="item">
+    <img src="."
+        alt="">
+</div>
+
+{% endfor %}
+
+{% endif %}

@@ -3,11 +3,13 @@
 {% for anime in aniresults %}
 
 <div class="card">
-    <a href="{{anime.url}}">
+    <div onclick="select_anime('{{ anime.title }}', '{{ anime.image_url }}')"
+        href="{{anime.url}}">
         <img src="{{anime.image_url}}"
             alt="anime">
-    </a>
-    <a href="{{anime.url}}" class="card-title">
+    </div>
+    <a href="{{anime.url}}"
+        class="card-title">
         {{ anime.title }}
     </a>
 </div>

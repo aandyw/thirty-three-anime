@@ -1,7 +1,7 @@
 const USER_INPUT = document.querySelector("#user-input");
 const SEARCH_ICON = document.querySelector("#search-icon");
 const ANIME_DIV = document.querySelector("#cards");
-const ENDPOINT = 'http://127.0.0.1:8000/animes';
+const SEARCH_ENDPOINT = 'http://127.0.0.1:8000/animes';
 const DELAY_MS = 500;
 let scheduled_function = false;
 
@@ -35,7 +35,7 @@ let ajax_call = (endpoint, req_params) => {
     request.send();
 };
 
-USER_INPUT.addEventListener('keyup', event => {
+USER_INPUT.addEventListener('keyup', (event) => {
     const req_params = USER_INPUT.value;
     // start animating the search icon with the CSS class
     // SEARCH_ICON.addClass('blink');
@@ -46,5 +46,5 @@ USER_INPUT.addEventListener('keyup', event => {
     }
 
     // setTimeout returns the ID of the function to be executed
-    scheduled_function = setTimeout(ajax_call, DELAY_MS, ENDPOINT, req_params);
+    scheduled_function = setTimeout(ajax_call, DELAY_MS, SEARCH_ENDPOINT, req_params);
 });

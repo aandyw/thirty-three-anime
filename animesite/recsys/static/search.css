@@ -52,6 +52,7 @@ a:hover {
   align-items: center;
   margin-bottom: 6%;
   border: none;
+  background: transparent;
 }
 
 .card img {
@@ -60,7 +61,7 @@ a:hover {
   object-fit: cover;
   border-radius: 3px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-  transition: 0.4s;
+  transition: 0.2s;
 }
 
 .card .card-title {
@@ -79,5 +80,16 @@ a:hover {
 /* MODAL */
 .modal-content {
   width: 62.5rem;
-  height: 62.5rem;
+  height: 55rem;
+  position: absolute;
+  transform: translate(-10%, 7%);
+  border: none;
+  background: transparent;
+  /* overflow: hidden;  */
+}
+
+@media only screen and (max-width: 991px) {
+  .modal-content {
+    transform: translate(-25%, 7%);
+  }
 }
