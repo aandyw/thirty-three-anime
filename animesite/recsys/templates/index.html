@@ -50,17 +50,18 @@
         </div>
         <div class="col-md">
           <div class="container matrix-wrapper">
-            <div class="matrix" data-toggle="modal" data-target="#exampleModal">
+            <div class="matrix">
               {% include 'matrix.html' %}
             </div>
-            <button onclick="recommend()">Submit</button>
+            <button id="submit">Submit</button>
+            <button id="clear">Clear</button>
           </div>
         </div>
       </div>
     </div>
 
-    <script src="{% static 'search.js' %}"></script>
-    <script src="{% static 'recommend.js' %}"></script>
+    <script src="{% static 'script.js' %}"></script>
+    <!-- <script src="{% static 'recommend.js' %}"></script> -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
       integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
       crossorigin="anonymous"></script>

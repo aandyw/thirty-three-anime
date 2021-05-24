@@ -73,6 +73,24 @@ def select(request):
     data = {"html_view": html}
     return JsonResponse(data, safe=False)
 
+def clear(request):
+    if request.method != 'GET':
+        raise Http404('Only GETs are allowed')
+    
+    request.session['favourite_anime'] = [None] * 9
+    animes = request.session.get('favourite_anime')
+
+    ctx = {
+        "favourites": animes
+    }
+
+    html = render_to_string(
+        template_name='matrix.html',
+        context=ctx
+    )
+    data = {"html_view": html}
+    return JsonResponse(data, safe=False)
+
 def recommend(request):
     animes = request.session.get('favourite_anime')
     # print(animes)
