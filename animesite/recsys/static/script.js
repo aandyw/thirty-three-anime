@@ -14,6 +14,8 @@ const CLEAR_ENDPOINT = 'http://127.0.0.1:8000/clear';
 const DELAY_MS = 500;
 let scheduled_function = false;
 
+const LOADER_HTML = '<div class="lds-grid"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>';
+
 /* EFFECTS */
 
 // FADE OUT
@@ -127,6 +129,8 @@ let select_anime = (id, title, image_url) => {
 };
 
 SUBMIT_BUTTON.addEventListener('click', (event) => {
+    document.body.innerHTML = LOADER_HTML;
+
     var request = new XMLHttpRequest();
     let url = new URL(RECOMMEND_ENDPOINT);
     request.open('GET', url, true);
@@ -134,8 +138,10 @@ SUBMIT_BUTTON.addEventListener('click', (event) => {
     request.onload = function () {
         if (this.status >= 200 && this.status < 400) {
             // Success!
+            var data = JSON.parse(this.response);
+            document.body.innerHTML = data['html_view'];
+            fadeIn(document.body);
             console.log("recommendation success");
-
         } else {
             // We reached our target server, but it returned an error
             console.log("recommendation error: " + this.status);

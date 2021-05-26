@@ -2,6 +2,8 @@
 
 {% for anime in aniresults %}
 
+{% if anime %}
+
 <div class="card">
     <div onclick="select_anime('{{ anime.mal_id }}', '{{ anime.title }}', '{{ anime.image_url }}')"
         href="{{anime.url}}">
@@ -14,8 +16,14 @@
     </a>
 </div>
 
+{% else %}
+
+<div class="card-empty"></div>
+
+{% endif %}
+
 {% endfor %}
 
 {% else %}
-<p>No anime available.</p>
+<p>Anime not found...</p>
 {% endif %}

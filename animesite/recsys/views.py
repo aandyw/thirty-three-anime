@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.http import JsonResponse, Http404, HttpResponse, HttpResponseRedirect
 
-from .services import get_search, perform_inference
+from .services import get_search, perform_inference, get_animes
 
 
 def index(request):
@@ -30,6 +30,10 @@ def animes(request):
     anime_results = []
     if title_param:
         anime_results = get_search(title_param)
+
+    if len(anime_results) % 3 != 0:
+        for _ in range(3 - (len(anime_results) % 3)):
+            anime_results.append(None)
 
     ctx = {
         "aniresults": anime_results
@@ -92,9 +96,23 @@ def clear(request):
     return JsonResponse(data, safe=False)
 
 def recommend(request):
+    if request.method != 'GET':
+        raise Http404('Only GETs are allowed')
+
     animes = request.session.get('favourite_anime')
-    # print(animes)
-    # print([int(anime.get('id')) for anime in animes])
     results = perform_inference([int(anime.get('id')) for anime in animes])
+
     print(results)
-    return HttpResponse("success")
+
+    anime_data = get_animes(results)
+
+    ctx = {
+        "recommendations": anime_data
+    }
+
+    html = render_to_string(
+        template_name='recommend.html',
+        context=ctx
+    )
+    data = {"html_view": html}
+    return JsonResponse(data, safe=False)

@@ -1,0 +1,29 @@
+<div class="app">
+  <header>
+    <h1>The<strong>Anime</strong>3x3</h1>
+    <!-- <h3>Recommendations that hit different</h3> -->
+    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+      enim ad minim veniam, quis nostrud exercitation ullamco</p> -->
+  </header>
+
+
+  <div class="container">
+    <div id="rec-cards">
+
+      {% for anime in recommendations %}
+
+      <div class="card">
+        <a href="{{anime.url}}" target="_blank" rel="noopener noreferrer">
+          <img src="{{anime.image_url}}" alt="anime">
+        </a>
+        <a href="{{anime.url}}" class="card-title" target="_blank" rel="noopener noreferrer">
+          {{ anime.title }}
+        </a>
+      </div>
+
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
