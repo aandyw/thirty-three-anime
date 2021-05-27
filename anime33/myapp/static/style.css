@@ -32,11 +32,6 @@ body {
   border: 3px solid #313131;
 }
 
-/* header {
-  position: fixed;
-  top: 0; 
-} */
-
 header h1 {
   color: #888;
   font-size: 4rem;
@@ -50,7 +45,12 @@ header h1 {
   padding: 0;
 }
 
-header h1 strong {
+h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+header h1 strong, h3 {
   color: #313131;
 }
 
@@ -200,7 +200,7 @@ a:hover {
   width: 16px;
   height: 16px;
   /* border-radius: 50%; */
-  background: #000;
+  background: #313131;
   animation: lds-grid 1.2s linear infinite;
 }
 .lds-grid div:nth-child(1) {
@@ -255,4 +255,18 @@ a:hover {
   50% {
     opacity: 0.5;
   }
+}
+
+/* Footer */
+.footer{
+  text-align: center;
+}
+
+.footer p {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.footer i {
+  color: #313131;
 }
