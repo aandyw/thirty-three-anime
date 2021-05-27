@@ -62,9 +62,9 @@ A web-based recommender system that infers the user's anime preference based on 
 
 ### Technologies used
 
+* HTML/CSS/JS
 * [Bootstrap](https://getbootstrap.com/)
 * [Django](https://www.djangoproject.com/)
-* HTML/CSS/JS
 * [Python](https://www.python.org/)
 * [Sklearn](https://scikit-learn.org/stable/)
 * [Jikan API](https://jikan.moe/)
