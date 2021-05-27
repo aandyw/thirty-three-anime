@@ -91,15 +91,19 @@ A list of pip packages are listed in `requirements.txt`. To set up your environm
 ### Installation
 
 1. Create a django project
+
    ```sh
    django-admin startproject anime33
    ```
 2. Clone the repo
+
    ```sh
    git clone https://github.com/Pie31415/thirty-three-anime.git
    ```
    and move the contents of [`anime33`](anime33/) to your newly created django project
+   
 3. Run the app
+
    ```sh
    cd anime33
    python manage.py runserver
