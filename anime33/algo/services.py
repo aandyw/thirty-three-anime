@@ -1,9 +1,7 @@
-
 import os
 import requests
-from recsys.algo.als import ALS
+from algo.recsys.als import ALS
 
-SEARCH_ENDPOINT = 'https://api.jikan.moe/v3/search/anime'
 ANIME_ENDPOINT = 'https://api.jikan.moe/v3/anime/{id}'
 
 recommender = ALS(
@@ -13,18 +11,8 @@ recommender = ALS(
     )
 
 
-def get_search(title):
-    try:
-        params = {'q': title, 'type': 'anime'}
-        r = requests.get(SEARCH_ENDPOINT, params=params)
-        results = r.json()['results']  # LIST OF RESULTS
-        # print(results)
-        return results
-    except:
-        return []
-
 def perform_inference(animeids):
-    results = recommender.inference(animeids, [10]*9)
+    results = recommender.inference(animeids)
     return results[:10]
 
 def get_animes(animeids):

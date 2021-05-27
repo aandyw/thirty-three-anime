@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.http import JsonResponse, Http404, HttpResponse, HttpResponseRedirect
 
-from .services import get_search, perform_inference, get_animes
+from .services import get_search
 
 
 def index(request):
@@ -90,28 +90,6 @@ def clear(request):
 
     html = render_to_string(
         template_name='matrix.html',
-        context=ctx
-    )
-    data = {"html_view": html}
-    return JsonResponse(data, safe=False)
-
-def recommend(request):
-    if request.method != 'GET':
-        raise Http404('Only GETs are allowed')
-
-    animes = request.session.get('favourite_anime')
-    results = perform_inference([int(anime.get('id')) for anime in animes])
-
-    print(results)
-
-    anime_data = get_animes(results)
-
-    ctx = {
-        "recommendations": anime_data
-    }
-
-    html = render_to_string(
-        template_name='recommend.html',
         context=ctx
     )
     data = {"html_view": html}

@@ -8,7 +8,7 @@ const MATRIX_VIEW = document.querySelector(".matrix");
 // endpoints
 const SEARCH_ENDPOINT = 'http://127.0.0.1:8000/animes';
 const SELECT_ENDPOINT = 'http://127.0.0.1:8000/select';
-const RECOMMEND_ENDPOINT = 'http://127.0.0.1:8000/recommend';
+const RECOMMEND_ENDPOINT = 'http://127.0.0.1:8000/predictor/recommend';
 const CLEAR_ENDPOINT = 'http://127.0.0.1:8000/clear';
 
 const DELAY_MS = 500;
