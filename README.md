@@ -15,16 +15,13 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-<!--   <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
 
   <h1 align="center">The Anime 3x3</h1>
 
   <p align="center">
-    An anime recommender system that hits different.
+    An anime recommender system that hits different
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/Pie31415/repo_name">View Demo</a>
   </p>
 </p>
 
@@ -53,12 +50,12 @@
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 <!-- [App demo](https://example.com) -->
-A web-based recommender system that infers the user's anime preference based on their 9 selected anime.
+The Anime 3x3 is a web-based recommender system that we've made to try and infer a user's anime preferences based on their submitted 3x3. The 3x3 is a collage of animes that
+can be as simple as just selecting 9 favorite anime or as bizarre as a mash of random shows. Whatever it is, it should be something that describes the user's unique tastes and hopefully, something that our system can pick up on.
 
 ### Technologies used
 
@@ -67,7 +64,7 @@ A web-based recommender system that infers the user's anime preference based on 
 * [Django](https://www.djangoproject.com/)
 * [Python](https://www.python.org/)
 * [Sklearn](https://scikit-learn.org/stable/)
-* [Jikan API](https://jikan.moe/)
+* [Jikan API](https://jikan.moe/)  
 
 
 <!-- GETTING STARTED -->
@@ -75,9 +72,9 @@ A web-based recommender system that infers the user's anime preference based on 
 
 ### Project Structure
 * [`/`](/../../): where you're reading this...hopefully
-* [`data/`](data/): a partial dataset of the [myanimelist kaggle dataset](https://www.kaggle.com/azathoth42/myanimelist)
-* [`recsys/`](recsys/): experimental recommender algorithms that we're looking into
-* [`utils/`](utils/): scripts for data-preparation/processing
+* [`data/`](data/): a partial/modified dataset of the [myanimelist kaggle dataset](https://www.kaggle.com/azathoth42/myanimelist)
+* [`recsys/`](recsys/): experimental recommender algorithms that we are/have looked into
+* [`utils/`](utils/): scripts for data-preparation/preprocessing and evaluation
 
 To get a local copy up and running follow these simple steps.
 
@@ -95,13 +92,28 @@ A list of pip packages are listed in `requirements.txt`. To set up your environm
    ```sh
    django-admin startproject anime33
    ```
+
 2. Clone the repo
 
    ```sh
    git clone https://github.com/Pie31415/thirty-three-anime.git
    ```
-   and move the contents of [`anime33`](anime33/) to your newly created django project
+   and move the contents of [`anime33/`](anime33/) to your newly created django project
    
+3. In your `settings.py` file add
+
+  ```python
+  INSTALLED_APPS = [
+    ...
+    'myapp.apps.MyappConfig',
+    'algo.apps.AlgoConfig'
+  ]
+
+  ...
+
+  STATIC_URL = '/static/'
+  ```
+
 3. Run the app
 
    ```sh
@@ -119,7 +131,8 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 * [This awesome README](https://github.com/othneildrew/Best-README-Template)
 * [Anime Jikan Search Tutorial](https://www.youtube.com/watch?v=AI5lsNeVyO8)
-* [Prototyping A RecSys](https://towardsdatascience.com/prototyping-a-recommender-system-step-by-step-part-1-knn-item-based-collaborative-filtering-637969614ea)
+* [Prototyping A RecSys](https://github.com/KevinLiao159/MyDataSciencePortfolio/tree/master/movie_recommender)
+* [Large-Scale Parallel Collaborative Filtering for the Netflix Prize](https://www.researchgate.net/publication/220788980_Large-Scale_Parallel_Collaborative_Filtering_for_the_Netflix_Prize)
 * [Very nice loaders](https://loading.io/css/)
 
 
