@@ -21,9 +21,11 @@
   <p align="center">
     An anime recommender system that hits different
     <br />
-    <a href="https://github.com/Pie31415/repo_name">View Demo</a>
+    <a href="https://github.com/Pie31415/thirty-three-anime">View The Website</a>
   </p>
 </p>
+
+![App demo](https://github.com/Pie31415/thirty-three-anime/blob/main/demo/anime33demo.gif)
 
 
 <!-- TABLE OF CONTENTS -->
@@ -52,10 +54,8 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
+The Anime 3x3 is a web-based recommender system that we've developed to give people recommendations based on their submitted 3x3. Since the 3x3 is a collage of anime that describes your unique taste, our program looks at your 9 selected anime and trys to offer you similar shows based on your preference.
 
-![App demo](https://github.com/Pie31415/thirty-three-anime/blob/main/demo/anime33demo.gif)
-The Anime 3x3 is a web-based recommender system that we've made to try and infer a user's anime preferences based on their submitted 3x3. The 3x3 is a collage of animes that
-can be as simple as just selecting 9 favorite anime or as bizarre as a mash of random shows. Whatever it is, it should be something that describes the user's unique tastes and hopefully, something that our system can pick up on.
 
 ### Technologies used
 
