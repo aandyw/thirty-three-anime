@@ -74,7 +74,7 @@ The Anime 3x3 is a web-based recommender system that we've developed to give peo
 * [`/`](/../../): where you're reading this...hopefully
 * [`data/`](data/): a partial/modified dataset of the [myanimelist kaggle dataset](https://www.kaggle.com/azathoth42/myanimelist)
 * [`recsys/`](recsys/): experimental recommender algorithms that we are/have looked into
-* [`utils/`](utils/): scripts for data-preparation/preprocessing and evaluation
+* [`utils/`](utils/): scripts for data-preparation/preprocessing of csv
 
 To get a local copy up and running follow these simple steps.
 
@@ -114,7 +114,7 @@ A list of pip packages are listed in `requirements.txt`. To set up your environm
   STATIC_URL = '/static/'
   ```
 
-3. Run the app
+4. Run the app
 
    ```sh
    cd anime33

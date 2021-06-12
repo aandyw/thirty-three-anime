@@ -10,7 +10,6 @@ def recommend(request):
 
     animes = request.session.get('favourite_anime')
     lst = [int(anime.get('id')) for anime in animes]
-    # print(lst)
     results = perform_inference(lst)
 
     print(results)

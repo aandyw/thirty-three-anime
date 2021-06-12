@@ -1,19 +1,15 @@
 import os
 import requests
-from algo.recsys.als import ALS
+from algo.recsys.knn import KNN
 
 ANIME_ENDPOINT = 'https://api.jikan.moe/v3/anime/{id}'
 
-recommender = ALS(
-     "D:\\Development\\Projects\\thirty-three-anime\\data\\myanimelist\\UserList.csv", 
-     "D:\\Development\\Projects\\thirty-three-anime\\data\\myanimelist\\anime_cleaned.csv", 
-     "D:\\Development\\Projects\\thirty-three-anime\\data\\myanimelist\\animelists_cleaned.csv"
-    )
+recommender = KNN()
 
 
 def perform_inference(animeids):
-    results = recommender.inference(animeids)
-    return results[:10]
+    results = recommender.get_top_n(animeids)
+    return results
 
 def get_animes(animeids):
     try:
