@@ -133,6 +133,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Anime Jikan Search Tutorial](https://www.youtube.com/watch?v=AI5lsNeVyO8)
 * [Prototyping A RecSys](https://github.com/KevinLiao159/MyDataSciencePortfolio/tree/master/movie_recommender)
 * [Large-Scale Parallel Collaborative Filtering for the Netflix Prize](https://www.researchgate.net/publication/220788980_Large-Scale_Parallel_Collaborative_Filtering_for_the_Netflix_Prize)
+* [Recommending anime with KNN](https://gist.github.com/Tahsin-Mayeesha/81dcdafc61b774768b64ba5201e31e0a#file-recommending-anime-with-k-nearest-neighbor-ipynb)
 * [Very nice loaders](https://loading.io/css/)
 
 
