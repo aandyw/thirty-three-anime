@@ -54,11 +54,14 @@ class KNN:
                 for i in self.indices[idx]:
                     predicted = self.data.get_id_from_idx(i)
                     # predicted = self.data.get_anime(id)
-                    if animeID != predicted and predicted not in recommendations:
+                    if (predicted is not None) and \
+                        (int(animeID) != int(predicted)) and \
+                        (predicted not in recommendations):
                         recommendations.append(predicted)
             else:
                 print("{} does not exist in database".format(animeID))
 
+        recommendations = list(filter(None, recommendations))
         random.shuffle(recommendations)
         return recommendations[:n]
 

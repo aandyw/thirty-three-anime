@@ -8,13 +8,17 @@ def recommend(request):
     if request.method != 'GET':
         raise Http404('Only GETs are allowed')
 
-    animes = request.session.get('favourite_anime')
-    lst = [int(anime.get('id')) for anime in animes]
-    results = perform_inference(lst)
+    try:
+        animes = request.session.get('favourite_anime')
+        lst = [int(anime.get('id')) for anime in animes]
+        results = perform_inference(lst)
 
-    print(results)
+        print(results)
 
-    anime_data = get_animes(results)
+        anime_data = get_animes(results)
+    
+    except:
+        anime_data = None
 
     ctx = {
         "recommendations": anime_data

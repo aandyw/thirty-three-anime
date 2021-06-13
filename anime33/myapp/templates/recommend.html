@@ -12,6 +12,7 @@
     <h2>Your Recommendations</h2>
     <div id="rec-cards">
 
+      {%if recommendations %}
       {% for anime in recommendations %}
 
       <div class="card">
@@ -24,6 +25,9 @@
       </div>
 
       {% endfor %}
+      {% else %}
+      <p>T_T Sorry, it seems like there were some problems with loading your recommendations. Please try again...</p>
+      {% endif %}
 
     </div>
   </div>
