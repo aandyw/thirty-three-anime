@@ -10,9 +10,9 @@ MODEL_PATH = os.path.join(os.path.dirname(__file__), SAVE_TO, 'knn_model.pickle'
 SIMILARITIES_PATH = os.path.join(os.path.dirname(__file__), SAVE_TO, 'indices.pickle')
 DISTANCES_PATH = os.path.join(os.path.dirname(__file__), SAVE_TO, 'distances.pickle')
 
-PATH_RATINGS = 'algo\\recsys\\data\\ratings.csv' 
-PATH_ANIMES = 'algo\\recsys\\data\\animes.csv'
-PATH_FEATURES = 'algo\\recsys\\data\\anime_features.csv'
+PATH_RATINGS = os.path.join(os.path.dirname(__file__), 'data', 'ratings.csv')
+PATH_ANIMES = os.path.join(os.path.dirname(__file__), 'data', 'animes.csv')
+PATH_FEATURES = os.path.join(os.path.dirname(__file__), 'data', 'anime_features.csv')
 
 class KNN:
 
