@@ -23,10 +23,8 @@ class AnimeData:
         self.anime_features = normalizer.fit_transform(features_df)
 
         # creating anime and idx maps
-        ratings_df = pd.DataFrame(user_df['animeid'].value_counts().reset_index().values, columns=['animeid', 'rated_by']).reset_index()
-        ratings_df['index'] += 1
-        rankings = ratings_df.set_index('animeid')['index'].to_dict()
-        self.animeID_to_idx = defaultdict(int, rankings)
+        indices = anime_df['animeid'].reset_index().set_index('animeid')['index'].to_dict()
+        self.animeID_to_idx = defaultdict(int, indices)
         self.idx_to_animeID = {v: k for k, v in self.animeID_to_idx.items()}
             
     def get_features(self):

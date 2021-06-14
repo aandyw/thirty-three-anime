@@ -49,32 +49,6 @@ class KNN:
                 pickle.dump(self.distances, f)
 
     def get_top_n(self, animeIDs, n=10):
-
-        # lst = []
-        # recommendations = []
-
-        # for animeID in animeIDs:
-        #     if self.data.get_anime(animeID) is not None:
-        #         print("Getting recommendations for {}".format(animeID))
-        #         idx = self.data.get_idx_from_id(animeID)
-
-        #         for i, dist in zip(self.indices[idx], self.distances[idx]):
-        #             predicted = self.data.get_id_from_idx(i)
-        #             # predicted = self.data.get_anime(id)
-        #             if (predicted is not None) and \
-        #                 (int(animeID) != int(predicted)) and \
-        #                 (predicted not in lst):
-        #                 lst.append((predicted, dist))
-        #     else:
-        #         print("{} does not exist in database".format(animeID))
-
-        # lst = sorted(lst, key=lambda x: x[1])
-        # for i in range(n):
-        #     print(lst[i][0])
-        #     recommendations.append(lst[i][0]) # get only anime id
-
-        # return recommendations[:n]
-
         recommendations = []
 
         for animeID in animeIDs:
@@ -87,7 +61,8 @@ class KNN:
                     # predicted = self.data.get_anime(id)
                     if (predicted is not None) and \
                         (int(animeID) != int(predicted)) and \
-                        (predicted not in recommendations):
+                        (predicted not in recommendations) and \
+                        (dist != 0):
                         recommendations.append(predicted)
             else:
                 print("{} does not exist in database".format(animeID))

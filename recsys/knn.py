@@ -87,7 +87,8 @@ class KNN:
                     # predicted = self.data.get_anime(id)
                     if (predicted is not None) and \
                         (int(animeID) != int(predicted)) and \
-                        (predicted not in recommendations):
+                        (predicted not in recommendations) and \
+                        (dist != 0):
                         recommendations.append(predicted)
             else:
                 print("{} does not exist in database".format(animeID))
