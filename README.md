@@ -94,7 +94,6 @@ A list of pip packages are listed in `requirements.txt`. To set up your environm
    ```sh
    git clone https://github.com/Pie31415/thirty-three-anime.git
    ```
-   and move the contents of [`anime33/`](anime33/) to your newly created django project
    
 2. Create an `.env` file with a `SECRET_KEY`
 
