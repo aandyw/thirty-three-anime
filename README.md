@@ -21,7 +21,7 @@
   <p align="center">
     An anime recommender system that hits different
     <br />
-    <a href="https://github.com/Pie31415/thirty-three-anime">View The Website</a>
+    <a href="https://fierce-thicket-59912.herokuapp.com/">View The Website</a>
   </p>
 </p>
 
@@ -56,6 +56,8 @@
 ## About The Project
 The Anime 3x3 is a web-based recommender system that we've developed to give people recommendations based on their submitted 3x3. Since the 3x3 is a collage of anime that describes your unique taste, our program looks at your 9 selected anime and trys to offer you similar shows based on your preference.
 
+The algorithms that we have experimented with for the project include: K-Nearest Neighbors (KNN) and Matrix Factorization with Alternating Least Squares (ALS). However, the current system only uses the Sklearn KNN implementation as we've had the most success with it at the moment. The accuracy and efficieny of our current algorithm leaves much to be desired but it is a system that offers good enough results 50% of the time? Future features may include a deep-learning based approach or a more thorough look at content-based and collaborative filtering methods.
+
 
 ### Technologies used
 
@@ -87,32 +89,14 @@ A list of pip packages are listed in `requirements.txt`. To set up your environm
 
 ### Installation
 
-1. Create a django project
-
-   ```sh
-   django-admin startproject anime33
-   ```
-
-2. Clone the repo
+1. Clone the repo
 
    ```sh
    git clone https://github.com/Pie31415/thirty-three-anime.git
    ```
    and move the contents of [`anime33/`](anime33/) to your newly created django project
    
-3. In your `settings.py` file add
-
-  ```python
-  INSTALLED_APPS = [
-    ...
-    'myapp.apps.MyappConfig',
-    'algo.apps.AlgoConfig'
-  ]
-
-  ...
-
-  STATIC_URL = '/static/'
-  ```
+2. Create an `.env` file with a `SECRET_KEY`
 
 4. Run the app
 
